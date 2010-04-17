@@ -3,7 +3,7 @@
 cd; #in home dir
 if test -f .zshrc 
 then
-    echo "File ~/.zshrc already exists, copy it to ~/.zshrc-old"
-    cp .zshrc .zshrc-old
+    echo "File ~/.zshrc already exists, move it to ~/.zshrc-old"
+    mv .zshrc .zshrc-old
 fi
 ln -s dotfiles/zsh/.zshrc 
