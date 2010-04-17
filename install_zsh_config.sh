@@ -1,5 +1,9 @@
 #!/bin/sh
 
 cd; #in home dir
-# TODO: if config exists - copy it somewhere
-ln -s dotfiles/zsh/.zshrc
+if test -f .zshrc 
+then
+    echo "File ~/.zshrc already exists, copy it to ~/.zshrc-old"
+    cp .zshrc .zshrc-old
+fi
+ln -s dotfiles/zsh/.zshrc 
