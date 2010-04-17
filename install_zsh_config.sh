@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd; #in home dir
-if [ -f .zshrc] 
+if test -f .zshrc
 then
     echo "File ~/.zshrc already exists, move it to ~/.zshrc-old"
     mv -i .zshrc .zshrc-old
