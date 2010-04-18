@@ -1,0 +1,1 @@
+export WORDCHARS='*?_-.[]~=&;&%^(){}<>\' # do not stop on \, stop only on /
