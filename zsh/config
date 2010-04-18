@@ -18,6 +18,12 @@ setopt share_history # share history between sessions
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# cd options
+DIRSTACKSIZE=25
+setopt autocd
+setopt auto_pushd
+setopt pushd_ignore_dups
+
 # Misc options
 setopt nobeep
-setopt autocd
+
