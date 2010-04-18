@@ -20,3 +20,4 @@ setopt hist_find_no_dups
 
 # Misc options
 setopt nobeep
+setopt autocd
