@@ -2,3 +2,8 @@
 autoload -U promptinit
 promptinit
 prompt adam2
+
+# Key bindings
+bindkey -e
+setopt no_flow_control # this allows to use \C-s for forward search
+bindkey '\C-w' kill-region

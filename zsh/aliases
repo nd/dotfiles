@@ -1,4 +1,5 @@
 alias ls='ls --color=auto'
+alias la='ls --color=auto -la'
 
 # git
 alias g='git status'
