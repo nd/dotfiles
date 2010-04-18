@@ -1,6 +1,9 @@
 #!/bin/sh
+#
+# Install zsh configs
+#
 
-cd; #in home dir
+cd $HOME;
 if test -f .zshrc
 then
     echo "File ~/.zshrc already exists, move it to ~/.zshrc-old"
