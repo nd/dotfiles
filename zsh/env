@@ -1,1 +1,8 @@
+PATH=.:$PATH
+PATH=/opt:$PATH
+PATH=~/bin:$PATH
+export PATH
+
+export CDPATH=:~/sandbox
+
 export WORDCHARS='*?_-.[]~=&;&%^(){}<>\' # do not stop on \, stop only on /
