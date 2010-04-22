@@ -1,6 +1,6 @@
-PATH=.:$PATH
 PATH=/opt:$PATH
 PATH=~/bin:$PATH
+PATH=.:$PATH
 export PATH
 
 export CDPATH=:~/sandbox
