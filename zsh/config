@@ -27,3 +27,7 @@ setopt pushd_ignore_dups
 # Misc options
 setopt nobeep
 
+# Completions
+autoload -U compinit
+compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # one way case-insensivity
