@@ -28,6 +28,22 @@ setopt pushd_ignore_dups
 setopt nobeep
 
 # Completions
+zmodload zsh/complist
+bindkey -M menuselect '\C-o' accept-and-menu-complete
+#zstyle ':completion:*' menu select=2
+#zstyle ':completion:*' force-list always
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # one way case-insensivity
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:windows' menu yes select search
+zstyle ':completion:*:windows' force-list always
+zstyle ':completion:*:processes' menu yes select
+zstyle ':completion:*:processes' force-list always
 autoload -U compinit
 compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # one way case-insensivity
+setopt complete_in_word 
+
+#:completion:function:completer:command:argument:tag
+
+
+
+
