@@ -1,5 +1,5 @@
-PATH=/opt/jdk1.6.0_18/bin:$PATH
-PATH=/opt/p4v/bin:$PATH
+PATH=$PATH:/opt/jdk1.6.0_18/bin
+PATH=$PATH:/opt/p4v/bin
 export PATH
 
 export JAVA_HOME=/opt/jdk1.6.0_18
