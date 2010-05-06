@@ -4,5 +4,6 @@ alias la='ls --color=auto -la'
 # git
 alias g='git status'
 alias gb='git branch'
+alias gd='git diff'
 
 alias cb='xclip -selection clipboard'
