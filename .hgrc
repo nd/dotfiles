@@ -1,0 +1,31 @@
+[ui]
+username = Dmitry Neverov <dmitry.neverov@gmail.com>
+
+[extensions]
+hgext.graphlog = 
+pager =
+bookmarks = 
+progress =
+hgext.mq =
+transplant=
+color =
+
+[bookmarks]
+track.current = True
+
+[alias]
+log = log --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.slog 
+llog = log --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.nlog 
+glog = glog --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.sglog 
+diff = diff -g
+show = llog -pr
+
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, log, llog, glog, qdiff, show
+
+[diff]
+git=1
+
+[color]
+mode = ansi
