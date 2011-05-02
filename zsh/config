@@ -12,8 +12,8 @@ setopt IGNORE_EOF # Ctrl-D doesn't exit
 
 # History
 HISTFILE=~/.history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt append_history # if there is several shell - append history in HISTFILE, not overwrite it
 setopt share_history # share history between sessions
 setopt hist_ignore_dups
