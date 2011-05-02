@@ -1,0 +1,17 @@
+startup_message off
+
+defscrollback 32768
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+escape ^tt
+
+#screen -t emacs 4 
+
+bind d
+bind ^d
+
+#copy to X clipboard on '>' (require xsel)
+bind > eval "writebuf" "exec sh -c 'cat /tmp/screen-exchange | xsel --clipboard --input'"
