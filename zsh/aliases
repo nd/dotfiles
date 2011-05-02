@@ -5,5 +5,12 @@ alias la='ls --color=auto -la'
 alias g='git status'
 alias gb='git branch'
 alias gd='git diff'
+alias gl='git log'
+alias gt='git tag'
+
+alias h='hg status'
+alias hb='hg branch'
+alias hbs='hg branches'
+alias hl='hg log'
 
 alias cb='xclip -selection clipboard'
