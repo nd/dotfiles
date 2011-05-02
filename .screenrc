@@ -15,3 +15,8 @@ bind ^d
 
 #copy to X clipboard on '>' (require xsel)
 bind > eval "writebuf" "exec sh -c 'cat /tmp/screen-exchange | xsel --clipboard --input'"
+
+bind 0 only
+bind 2 split
+bind 3 split -v
+bind o focus
