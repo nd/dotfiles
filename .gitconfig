@@ -10,3 +10,7 @@
 	st = status
 	co = checkout
 	br = branch
+[core]
+  editor = /usr/local/bin/emacsclient -a '' -c $@
+[push]
+  default = current
