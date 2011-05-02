@@ -1,5 +1,5 @@
 [ui]
-username = Dmitry Neverov <dmitry.neverov@gmail.com>
+username = Dmitry Neverov <dmitry.neverov@jetbrains.com>
 
 [extensions]
 hgext.graphlog = 
@@ -12,6 +12,10 @@ color =
 
 [bookmarks]
 track.current = True
+
+[auth]
+jb.prefix = http://hg.jetbrains.org
+jb.username = Dmitry.Neverov
 
 [alias]
 log = log --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.slog 
