@@ -19,6 +19,7 @@ llog = log --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.nlog
 glog = glog --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.sglog 
 diff = diff -g
 show = llog -pr
+revert = revert --no-backup
 
 [pager]
 pager = LESS='FSRX' less

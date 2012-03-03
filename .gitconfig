@@ -10,6 +10,8 @@
 	st = status
 	co = checkout
 	br = branch
+  cp = cherry-pick
+  glog = log --graph
 [core]
   editor = /usr/local/bin/emacsclient -a '' -c $@
 [push]
