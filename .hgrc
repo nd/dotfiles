@@ -10,19 +10,30 @@ hgext.mq =
 transplant=
 color =
 
+[extensions]
+largefiles =
+#[largefiles]
+#minsize = 1
+#patterns = *.dll *.exe
+#usercache = /home/nd/sandbox/for_test/large_files_cache
+
 [bookmarks]
-track.current = True
+#track.current = True
 
 [auth]
+jbnet.prefix = http://hg.labs.intellij.net
+jbnet.username = hg-ro
+jbnet.password = 9ZO463dVyo
 jb.prefix = http://hg.jetbrains.org
 jb.username = Dmitry.Neverov
 
 [alias]
-log = log --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.slog 
-llog = log --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.nlog 
-glog = glog --style=/home/nd/dotfiles/mercurial-cli-templates/map-cmdline.sglog 
+log = log --style=/home/nd/sandbox/dotfiles/mercurial-cli-templates/map-cmdline.slog 
+llog = log --style=/home/nd/sandbox/dotfiles/mercurial-cli-templates/map-cmdline.nlog 
+glog = glog --style=/home/nd/sandbox/dotfiles/mercurial-cli-templates/map-cmdline.sglog 
 diff = diff -g
 show = llog -pr
+revert = revert --no-backup
 
 [pager]
 pager = LESS='FSRX' less
@@ -33,3 +44,9 @@ git=1
 
 [color]
 mode = ansi
+
+#[ui]
+#merge = emacs
+# 
+#[merge-tools]
+#emacs.args = -q --eval "(ediff-merge-with-ancestor \"$local\" \"$other\" \"$base\" nil \"$output\")"
