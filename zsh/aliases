@@ -9,8 +9,7 @@ alias gl='git log'
 alias gt='git tag'
 
 alias h='hg status'
-alias hb='hg branch'
-alias hbs='hg branches'
+alias hb='hg branches'
 alias hl='hg log'
 
 alias cb='xclip -selection clipboard'
