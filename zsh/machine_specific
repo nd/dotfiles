@@ -1,6 +1,6 @@
 #export EDITOR="emacsclient -c -a ''"
 
-export JAVA_HOME=/opt/jdk1.6.0_23
+export JAVA_HOME=/opt/jdk1.6.0_35
 export JDK_HOME=$JAVA_HOME
 
 export P4PORT=perforce.labs.intellij.net:1666
@@ -8,7 +8,7 @@ export P4USER=Dmitry.Neverov
 export P4CLIENT=Dmitry.Neverov.Linux
 export P4EDITOR=~/bin/edit-wait
 
-export TEAMCITY_HG_PATH=/usr/local/bin/hg
+export TEAMCITY_HG_PATH=hg
 
 export SCALA_HOME=/home/nd/sandbox/scala
 export GRADLE_HOME=/home/nd/sandbox/gradle
