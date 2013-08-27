@@ -28,6 +28,12 @@ setopt pushd_ignore_dups
 # Misc options
 setopt nobeep
 
+# fix slow completion of branches
+# http://stackoverflow.com/questions/9810327/git-tab-autocompletion-is-useless-can-i-turn-it-off-or-optimize-it/9810485#9810485
+__git_files () {
+    _wanted files expl 'local files' _files
+}
+
 # Completions
 zmodload zsh/complist
 bindkey -M menuselect '\C-o' accept-and-menu-complete
@@ -41,10 +47,6 @@ zstyle ':completion:*:processes' menu yes select
 zstyle ':completion:*:processes' force-list always
 autoload -U compinit
 compinit
-setopt complete_in_word 
+setopt complete_in_word
 
 #:completion:function:completer:command:argument:tag
-
-
-
-
