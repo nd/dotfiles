@@ -8,6 +8,7 @@ bindkey -e
 setopt no_flow_control # this allows to use \C-s for forward search
 bindkey '\C-w'     kill-region
 bindkey '\C-x\C-m' execute-named-cmd
+bindkey "\eh" backward-delete-word
 setopt IGNORE_EOF # Ctrl-D doesn't exit
 
 # History
