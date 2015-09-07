@@ -1,7 +1,7 @@
-. ~/dotfiles/zsh/env
-. ~/dotfiles/zsh/config
-. ~/dotfiles/zsh/aliases
-if test -f ~/dotfiles/zsh/machine_specific 
+. ~/p/dotfiles/zsh/env
+. ~/p/dotfiles/zsh/config
+. ~/p/dotfiles/zsh/aliases
+if test -f ~/p/dotfiles/zsh/machine_specific
 then
-    . ~/dotfiles/zsh/machine_specific
+    . ~/p/dotfiles/zsh/machine_specific
 fi
