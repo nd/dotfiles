@@ -4,12 +4,43 @@ promptinit
 prompt adam2
 
 # Key bindings
+# \eh, \ew, \eX work when iTerm 'sends escape sequence' X for some key
 bindkey -e
 setopt no_flow_control # this allows to use \C-s for forward search
 bindkey '\C-w'     kill-region
 bindkey '\C-x\C-m' execute-named-cmd
 bindkey "\eh" backward-delete-word
 setopt IGNORE_EOF # Ctrl-D doesn't exit
+
+# copy to clipboard
+# https://coderwall.com/p/a035gq/zsh-copy-paste-system-wide-for-os-x-like-in-emacs
+pb-kill-line () {
+  zle kill-line
+  echo -n $CUTBUFFER | pbcopy
+}
+pb-backward-kill-word () {
+  zle backward-kill-word
+  echo -n $CUTBUFFER | pbcopy
+}
+pb-copy-region-as-kill-deactivate-mark () {
+  zle copy-region-as-kill
+  zle set-mark-command -n -1
+  echo -n $CUTBUFFER | pbcopy
+}
+pb-yank () {
+  CUTBUFFER=$(pbpaste)
+  zle yank
+}
+
+zle -N pb-kill-line
+zle -N pb-backward-kill-word
+zle -N pb-copy-region-as-kill-deactivate-mark
+zle -N pb-yank
+
+bindkey '^K'   pb-kill-line
+bindkey '\e^H' pb-backward-kill-word
+bindkey '\ew'  pb-copy-region-as-kill-deactivate-mark
+bindkey '^Y'   pb-yank
 
 # History
 HISTFILE=~/.history
