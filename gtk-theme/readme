@@ -1,0 +1,3 @@
+put theme dir into ~/.themes and run
+
+  gsettings set org.gnome.desktop.interface gtk-key-theme "neverov"
