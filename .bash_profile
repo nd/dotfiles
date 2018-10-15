@@ -5,5 +5,6 @@ if [ -f "$HOME/.bashrc" ]; then
 fi
 
 JAVA_HOME="$HOME/local/jdk1.8.0_181"
-PATH="$JAVA_HOME/bin:$HOME/local:$HOME/p/bin:$PATH:."
+GRADLE_HOME="$HOME/local/gradle-4.10.2"
+PATH="$JAVA_HOME/bin:$HOME/local:$HOME/p/bin:$HOME/p/gos/go1.11/bin:$GRADLE_HOME/bin:$PATH:."
 
