@@ -119,3 +119,5 @@ fi
 shopt -s autocd
 alias g='git status'
 alias gb='git branch'
+
+stty intr \^g
