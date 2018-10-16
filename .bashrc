@@ -120,4 +120,7 @@ shopt -s autocd
 alias g='git status'
 alias gb='git branch'
 
+# disable exit on ctrl-d
+set -o ignoreeof
+
 stty intr \^g
