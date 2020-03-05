@@ -248,7 +248,7 @@
     <!--
       Take a screenshot of the current window with scrot when Alt+Print are pressed 
     -->
-    <keybind key="Print">
+    <keybind key="A-C-3">
       <action name="Execute">
         <command>lxsession-default screenshot</command>
       </action>
