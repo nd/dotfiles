@@ -219,14 +219,24 @@
 
 (add-hook 'ido-setup-hook 'nd-ido-keys)
 
-(defun nd-fix-ido-buf-order ()
-  "Fixes buffer list order in C-x C-b so that buffers shown in
-other windows are not moved to the end. Moves only the current
-buffer to the end."
-  (let ((cur-buf (buffer-name (current-buffer))))
-    (setq ido-temp-list (ido-make-buffer-list-1 (selected-frame) (list cur-buf)))))
-
-(add-hook 'ido-make-buffer-list-hook 'nd-fix-ido-buf-order)
+;; redefine ido-make-buffer-list so that buffers visible in other
+;; windows are not moved to the end. Only current buffer is moved to
+;; the end. Cannot do that via hook because for kill buffer command
+;; current buffer should be the first and hook doesn't have access to
+;; the DEFAULT param.
+(defun ido-make-buffer-list (default)
+  (let* ((ido-current-buffers (ido-get-buffers-in-frames 'current))
+	 (ido-temp-list (ido-make-buffer-list-1 (selected-frame) (list (buffer-name (current-buffer))))))
+    (if ido-temp-list
+	(nconc ido-temp-list ido-current-buffers)
+      (setq ido-temp-list ido-current-buffers))
+    (if default
+	(setq ido-temp-list
+	      (cons default (delete default ido-temp-list))))
+    (if (bound-and-true-p ido-enable-virtual-buffers)
+	(ido-add-virtual-buffers-to-list))
+    (run-hooks 'ido-make-buffer-list-hook)
+    ido-temp-list))
 
 
 (setq dired-recursive-deletes 'top
