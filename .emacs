@@ -219,6 +219,14 @@
 
 (add-hook 'ido-setup-hook 'nd-ido-keys)
 
+(defun nd-fix-ido-buf-order ()
+  "Fixes buffer list order in C-x C-b so that buffers shown in
+other windows are not moved to the end. Moves only the current
+buffer to the end."
+  (let ((cur-buf (buffer-name (current-buffer))))
+    (setq ido-temp-list (ido-make-buffer-list-1 (selected-frame) (list cur-buf)))))
+
+(add-hook 'ido-make-buffer-list-hook 'nd-fix-ido-buf-order)
 
 
 (setq dired-recursive-deletes 'top
