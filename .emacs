@@ -281,6 +281,10 @@
 (require 'cc-mode)
 (define-key c-mode-map "\C-\M-h"  'backward-kill-word)
 (define-key c++-mode-map "\C-\M-h"  'backward-kill-word)
+(define-key c++-mode-map "\C-\M-h"  'backward-kill-word)
+(define-key c-mode-map "," 'self-insert-command)
+(define-key c-mode-map ";" 'self-insert-command)
+(define-key c-mode-map "/" 'self-insert-command)
 
 
 (setq default-directory "~")
@@ -372,7 +376,7 @@
                   ))
 
 (load-file "p:/handmade-root/handmade/misc/emacs.el")
-
+(setq c-electric-flag nil)
 
 
 (require 'package)
