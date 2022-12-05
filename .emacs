@@ -245,6 +245,11 @@
 
 (setq ls-lisp-dirs-first t)
 
+(defun nd-open-home-dir ()
+  (interactive)
+  (dired "~"))
+(global-set-key "\C-x`" 'nd-open-home-dir)
+
 (defun nd-dired-keys ()
   (define-key dired-mode-map "%n" 'find-name-dired)
   (define-key dired-mode-map "%N"
