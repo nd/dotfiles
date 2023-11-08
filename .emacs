@@ -192,8 +192,11 @@
 (require 'ido)
 (setq ido-enable-flex-matching t
       ido-use-filename-at-point nil
-      ido-create-new-buffer 'always
-      ido-max-directory-size 300000)
+      ido-create-new-buffer 'always)
+
+;; list all dirs in completion, by default ido has 30000 bytes limit on dir listing, which is too small, nil means no limit
+(custom-set-variables '(ido-max-directory-size nil))
+
 (ido-mode t)
 
 (setq ido-auto-merge-inhibit-characters-regexp ".*")
