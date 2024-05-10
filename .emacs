@@ -403,3 +403,9 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 ;;show tags in log:
 (setq magit-have-decorate t)
+
+;; org
+(custom-set-faces
+ '(org-link ((t (:inherit text)))))
+(define-key org-mode-map "\M-n" 'org-next-visible-heading)
+(define-key org-mode-map "\M-p" 'org-previous-visible-heading)
