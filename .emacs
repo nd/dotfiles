@@ -406,6 +406,7 @@
 
 ;; org
 (custom-set-faces
+ '(org-level-1 ((t (:inherit bold :extend nil))))
  '(org-link ((t (:inherit text)))))
 (define-key org-mode-map "\M-n" 'org-next-visible-heading)
 (define-key org-mode-map "\M-p" 'org-previous-visible-heading)
