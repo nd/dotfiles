@@ -56,27 +56,48 @@
 
 (setq calendar-week-start-day 1)
 
+;; new keymap experiment:
+(global-set-key "\C-j" 'next-line)
+(global-set-key "\C-k" 'previous-line)
+(global-set-key "\C-l" 'forward-char)
+(global-set-key "\C-h" 'backward-char)
+
+(global-set-key "\C-\M-k" 'cua-scroll-down)
+(global-set-key "\C-\M-j" 'cua-scroll-up)
+(global-set-key "\C-\M-h" 'backward-word)
+(global-set-key "\C-\M-l" 'forward-word)
+
+(global-set-key "\C-\M-e" 'kill-line)
+
+(global-set-key "\C-d" 'delete-char)
+(global-set-key "\C-\M-d" 'kill-word)
+(global-set-key "\C-b" 'backward-delete-char)
+(global-set-key "\C-\M-b"  'backward-kill-word)
+
+(global-set-key "\C-w" 'kill-ring-save)
+(global-set-key "\C-\M-w" 'kill-region)
+(global-set-key "\C-y" 'cua-paste)
 
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-xm"    'execute-extended-command)
 
-(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-h"     'backward-delete-char-untabify)
+;(global-set-key "\C-x\C-k" 'kill-region)
+;(global-set-key "\C-h"     'backward-delete-char-untabify)
 
 ;; C-h delete backward char while search
-(define-key isearch-mode-map "\C-h" 'isearch-del-char)
-(define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
-(define-key occur-mode-map "j" 'occur-next)
-(define-key occur-mode-map "k" 'occur-prev)
+;(define-key isearch-mode-map "\C-h" 'isearch-del-char)
+;(define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
+;(define-key occur-mode-map "j" 'occur-next)
+;(define-key occur-mode-map "k" 'occur-prev)
 
-(global-set-key "\C-\M-h"  'backward-kill-word)
-(global-set-key "\M-h"  'backward-kill-word)
+;(global-set-key "\C-\M-h"  'backward-kill-word)
+;(global-set-key "\M-h"  'backward-kill-word)
 
 ;; bindings for search
 (global-set-key "\C-s"    'isearch-forward-regexp)
 (global-set-key "\C-r"    'isearch-backward-regexp)
-(global-set-key "\C-\M-s" 'isearch-forward)
-(global-set-key "\C-\M-r" 'isearch-backward)
+;(global-set-key "\C-\M-s" 'isearch-forward)
+;(global-set-key "\C-\M-r" 'isearch-backward)
 (global-set-key "\M-%"    'query-replace-regexp)
 
 (global-set-key "\C-c\C-t" 'toggle-truncate-lines)
@@ -94,7 +115,7 @@
 (global-set-key (kbd "C-x k") 'kill-buffer-or-client)
 
 ;; Completion that uses many different methods to find options.
-(global-set-key (kbd "M-/") 'hippie-expand)
+;(global-set-key (kbd "M-/") 'hippie-expand)
 
 (global-set-key "\C-x\C-h" 'help-command)
 ;; Help should search more than just commands (from emacs-starter-kit)
@@ -287,9 +308,9 @@
 
 
 (require 'cc-mode)
-(define-key c-mode-map "\C-\M-h"  'backward-kill-word)
-(define-key c++-mode-map "\C-\M-h"  'backward-kill-word)
-(define-key c++-mode-map "\C-\M-h"  'backward-kill-word)
+(define-key c-mode-map "\C-\M-b"  'backward-kill-word)
+(define-key c++-mode-map "\C-\M-b"  'backward-kill-word)
+(define-key c++-mode-map "\C-\M-b"  'backward-kill-word)
 (define-key c-mode-map "," 'self-insert-command)
 (define-key c-mode-map ";" 'self-insert-command)
 (define-key c-mode-map "/" 'self-insert-command)
