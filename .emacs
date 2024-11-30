@@ -56,6 +56,12 @@
 
 (setq calendar-week-start-day 1)
 
+;; cua is usefull for rectagle editing
+(setq cua-enable-cua-keys nil)
+(setq cua-highlight-region-shift-only nil) ;no transient mark mode
+(setq cua-toggle-set-mark nil) ;original set-mark behavior, i.e. no transient-mark-mode
+(cua-mode)
+
 ;; new keymap experiment:
 (global-set-key "\C-j" 'next-line)
 (global-set-key "\C-k" 'previous-line)
@@ -132,12 +138,6 @@
 (global-set-key "\C-\M-z" '(lambda () (interactive) (scroll-down 1)))
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;; cua is usefull for rectagle editing
-(setq cua-enable-cua-keys nil)
-(setq cua-highlight-region-shift-only nil) ;no transient mark mode
-(setq cua-toggle-set-mark nil) ;original set-mark behavior, i.e. no transient-mark-mode
-(cua-mode)
 
 ;;bind cmd to meta on mac:
 (setq ns-command-modifier 'meta)
