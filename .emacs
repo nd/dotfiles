@@ -432,3 +432,4 @@
 (require 'org)
 (define-key org-mode-map "\M-n" 'org-next-visible-heading)
 (define-key org-mode-map "\M-p" 'org-previous-visible-heading)
+(define-key org-mode-map "\C-j" 'next-line)
