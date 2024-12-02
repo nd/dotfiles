@@ -1,0 +1,3 @@
+;;bind cmd to meta on mac:
+(setq ns-command-modifier 'meta)
+

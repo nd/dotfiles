@@ -433,3 +433,19 @@
 (define-key org-mode-map "\M-n" 'org-next-visible-heading)
 (define-key org-mode-map "\M-p" 'org-previous-visible-heading)
 (define-key org-mode-map "\C-j" 'next-line)
+
+;; load os-specific config
+(cond
+ ((and (string-match "linux" (symbol-name system-type))
+       (file-exists-p "~/.emacs_linux"))
+  (load-file "~/.emacs_linux"))
+
+ ((and (string-match "darwin" (symbol-name system-type))
+       (file-exists-p "~/.emacs_mac"))
+  (load-file "~/.emacs_mac"))
+
+ ((and (string-match "windows" (symbol-name system-type))
+       (file-exists-p "~/.emacs_win"))
+  (load-file "~/.emacs_win")))
+
+
