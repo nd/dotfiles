@@ -87,29 +87,15 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-xm"    'execute-extended-command)
 
-;(global-set-key "\C-x\C-k" 'kill-region)
-;(global-set-key "\C-h"     'backward-delete-char-untabify)
-
 ;; C-h delete backward char while search
-;(define-key isearch-mode-map "\C-h" 'isearch-del-char)
-;(define-key isearch-mode-map (kbd "C-o") 'isearch-occur)
-;(define-key occur-mode-map "j" 'occur-next)
-;(define-key occur-mode-map "k" 'occur-prev)
-
-;(global-set-key "\C-\M-h"  'backward-kill-word)
-;(global-set-key "\M-h"  'backward-kill-word)
-
-;; bindings for search
+(define-key isearch-mode-map "\C-b" 'isearch-del-char)
 (global-set-key "\C-s"    'isearch-forward-regexp)
 (global-set-key "\C-r"    'isearch-backward-regexp)
-;(global-set-key "\C-\M-s" 'isearch-forward)
-;(global-set-key "\C-\M-r" 'isearch-backward)
 (global-set-key "\M-%"    'query-replace-regexp)
 
 (global-set-key "\C-c\C-t" 'toggle-truncate-lines)
 
-;; revert buffer
-(global-set-key (kbd "C-c r") 'revert-buffer)
+(global-set-key (kbd "C-c r") 'revert-buffer) ; reloads from disk
 
 ;; kill buffer
 (defun kill-buffer-or-client ()
@@ -119,9 +105,6 @@
       (server-edit)
     (ido-kill-buffer)))
 (global-set-key (kbd "C-x k") 'kill-buffer-or-client)
-
-;; Completion that uses many different methods to find options.
-;(global-set-key (kbd "M-/") 'hippie-expand)
 
 (global-set-key "\C-x\C-h" 'help-command)
 ;; Help should search more than just commands (from emacs-starter-kit)
@@ -139,9 +122,6 @@
 
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;;bind cmd to meta on mac:
-(setq ns-command-modifier 'meta)
-
 (defun goto-line-with-feedback ()
   "Show line numbers temporarily, while prompting for the line number input"
   (interactive)
@@ -152,7 +132,6 @@
     (linum-mode -1)))
 
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
-
 
 
 ;; no scrollbar
@@ -195,7 +174,7 @@
 
 ;; split window horizontally
 (setq split-height-threshold 200)
-;; don't split in more than 2 windows on my 32'' monitor:
+;; don't split in more than 2 windows on my wide monitor:
 (setq split-width-threshold 200)
 
 
@@ -206,8 +185,6 @@
       display-time-load-average-threshold 1
       display-time-day-and-date t)
 (display-time)
-
-
 
 
 (require 'ido)
@@ -234,7 +211,7 @@
 
 (defun nd-ido-keys ()
   "Add my keybindings for ido."
-  (define-key ido-completion-map "\C-\M-h" 'ido-delete-backward-word-updir)
+  (define-key ido-completion-map "\C-\M-b" 'ido-delete-backward-word-updir)
   (define-key ido-completion-map "\C-i"    'ido-copy-current-file-name)
   (define-key ido-completion-map "\C-n"    'ido-next-match)
   (define-key ido-completion-map "\C-p"    'ido-prev-match)
@@ -269,11 +246,6 @@
 
 (setq ls-lisp-dirs-first t)
 
-(defun nd-open-home-dir ()
-  (interactive)
-  (dired "~"))
-(global-set-key "\C-x`" 'nd-open-home-dir)
-
 (defun nd-dired-keys ()
   (define-key dired-mode-map "%n" 'find-name-dired)
   (define-key dired-mode-map "%N"
@@ -299,7 +271,6 @@
 
 
 (require 'epa)
-(custom-set-variables '(epg-gpg-program "c:/Program Files/Git/usr/bin/gpg.exe"))
 (epa-file-enable)
 
 
@@ -404,7 +375,6 @@
 "C:\\Users\\nd\\AppData\\Local\\Microsoft\\WindowsApps"
                   ))
 
-(load-file "p:/handmade-root/handmade/misc/emacs.el")
 (setq c-electric-flag nil)
 
 
@@ -419,7 +389,6 @@
 ;; M-x package-refresh-contents
 ;; M-x package-install RET magit RET
 
-(setq magit-git-executable "c:/Program Files/Git/bin/git.exe")
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 ;;show tags in log:
@@ -448,4 +417,5 @@
        (file-exists-p "~/.emacs_win"))
   (load-file "~/.emacs_win")))
 
-
+(if (file-exists-p "~/.emacs_local")
+    (load-file "~/.emacs_local"))

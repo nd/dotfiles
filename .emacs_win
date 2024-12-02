@@ -1,0 +1,4 @@
+(custom-set-variables '(epg-gpg-program "c:/Program Files/Git/usr/bin/gpg.exe"))
+(setq magit-git-executable "c:/Program Files/Git/bin/git.exe")
+
+(load-file "p:/handmade-root/handmade/misc/emacs.el")
