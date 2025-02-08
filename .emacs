@@ -1,3 +1,8 @@
+(setq native-comp-jit-compilation nil)
+
+;; no .#. <file> -> sessions files on editing
+(setq create-lockfiles nil)
+
 ;; moving cursor down at bottom scrolls
 ;; only a single line, not half page
 (setq-default scroll-step 1)
@@ -291,10 +296,10 @@
 
 
 (set-language-environment 'Russian)
-(if (equal system-type 'windows-nt)
-    (progn (set-default-coding-systems    'utf-8-dos)
-           (set-buffer-file-coding-system 'utf-8-dos)
-           (prefer-coding-system          'utf-8-dos)))
+(progn
+  (set-default-coding-systems    'utf-8-unix)
+  (set-buffer-file-coding-system 'utf-8-unix)
+  (prefer-coding-system          'utf-8-unix))
 
 ;; To disable graphical prompt
 ;; - add 'allow-emacs-pinentry' line to /home/nd/.gnupg/gpg-agent.conf
@@ -359,22 +364,6 @@
 (global-set-key (kbd "<f2>") 'next-error)
 (global-set-key (kbd "S-<f2>") 'previous-error)
 
-;; todo fix
-(setenv "PATH" "C:\\Windows\\System32\\OpenSSH;c:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NGX;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\Users\\nd\\AppData\\Local\\Microsoft\\WindowsApps;c:\\Program Files\\PuTTY")
-(setq exec-path '(
-"C:\\Windows\\System32\\OpenSSH\\"
-"c:\\Program Files\\PuTTY"
-"c:\\Program Files\\Git\\usr\\bin"
-"C:\\Windows\\system32"
-"C:\\Windows"
-"C:\\Windows\\System32\\Wbem"
-"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
-"C:\\Program Files\\NVIDIA Corporation\\NVIDIA NGX"
-"C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
-"C:\\Program Files\\Git\\cmd"
-"C:\\Users\\nd\\AppData\\Local\\Microsoft\\WindowsApps"
-                  ))
-
 (setq c-electric-flag nil)
 
 
@@ -384,15 +373,6 @@
    '("melpa" . "http://melpa.org/packages/")
    t)
 (package-initialize)
-
-;; install magit from melpa
-;; M-x package-refresh-contents
-;; M-x package-install RET magit RET
-
-(require 'magit)
-(global-set-key (kbd "C-x g") 'magit-status)
-;;show tags in log:
-(setq magit-have-decorate t)
 
 ;; org
 (custom-set-faces
@@ -419,3 +399,4 @@
 
 (if (file-exists-p "~/.emacs_local")
     (load-file "~/.emacs_local"))
+
